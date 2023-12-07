@@ -46,3 +46,27 @@ if __name__ == '__main__':
     main_bot.delete_webhook()
     main_bot.set_webhook(f"{config.WEBHOOK_HOST}/{config.WEBHOOK_PATH}/{config.MAIN_BOT_TOKEN}")
     app.run(host=config.WEBAPP_HOST, port=config.WEBAPP_PORT)
+
+import requests
+import os
+
+def like_video(url):
+    headers = {"Authorization": "Bearer {}".format(token)}
+    response = requests.post("https://www.googleapis.com/youtube/v3/videos/like", headers=headers, params={"id": url})
+    return response.status_code == 200
+
+def take_screenshot(url):
+    browser = webdriver.Chrome()
+    browser.get(url)
+    screenshot = browser.save_screenshot("screenshot.png")
+    return screenshot
+
+def share_screenshot(screenshot):
+    with open("screenshot.png", "rb") as f:
+        bot.send_photo(chat_id, f)
+
+def main():
+    #5802470376
+
+if __name__ == "__main__":
+    main()

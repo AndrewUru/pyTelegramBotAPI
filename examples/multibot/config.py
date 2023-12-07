@@ -1,4 +1,4 @@
-MAIN_BOT_TOKEN = "your_main_bot_token"
+MAIN_BOT_TOKEN = "6743646945:AAHBraiR9eRwpQQjg-pc6GsXflYTaw21YI8"
 
 WEBHOOK_HOST = "your_domain.com"
 WEBHOOK_PATH = "telegram_webhook"
