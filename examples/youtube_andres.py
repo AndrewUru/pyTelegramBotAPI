@@ -1,8 +1,10 @@
-import requests
-import os
+# Token de API de Telegram
+token = "6743646945:AAHBraiR9eRwpQQjg-pc6GsXflYTaw21YI8"
 
-def get_url(message):
-    return message.text
+# ID del grupo de Telegram
+chat_id = "5802470376"
+
+# Código modificado
 
 def like_video(url):
     headers = {"Authorization": "Bearer {}".format(token)}
@@ -21,7 +23,7 @@ def share_screenshot(screenshot):
 
 def main():
     message = bot.get_updates()[0]
-    url = get_url(message)
+    url = message.text
     if like_video(url):
         screenshot = take_screenshot(url)
         share_screenshot(screenshot)
