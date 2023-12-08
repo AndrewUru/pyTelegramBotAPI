@@ -1,3 +1,7 @@
+import requests
+import os
+
+
 # Token de API de Telegram
 token = "6743646945:AAHBraiR9eRwpQQjg-pc6GsXflYTaw21YI8"
 
